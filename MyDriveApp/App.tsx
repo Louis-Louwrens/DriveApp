@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image, SafeAreaView } from 'react-native';
 
 export default function App() {
   
@@ -17,10 +17,14 @@ export default function App() {
     }
   
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+    <View>
+      <Image
+       source={{uri:'https://images.pexels.com/photos/13861/IMG_3496bfree.jpg',}} style={styles.image} />
       <Text style={styles.response}>{feedback}{/*This is my message to be displayed to the user */}</Text> 
       
     </View>
+    </SafeAreaView>
   );
 }
 
@@ -35,5 +39,13 @@ const styles = StyleSheet.create({
   response: {
     fontSize: 28,
     color: 'blue',
-  }
+  },
+  image:{
+    width: 450,
+    height: 350,
+    resizeMode: 'contain',
+    top:0,
+    position:'absolute',
+  },
+
 });
