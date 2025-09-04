@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, SafeAreaView } from 'react-native';
 
 export default function App() {
   
-  const age = 22;
+  const age = 20;
   const licenceYears = 5;
   let feedback = '';
   
@@ -18,11 +18,13 @@ export default function App() {
   
   return (
     <SafeAreaView style={styles.container}>
-    <View>
+    <View style={styles.content}>
+      <Text style={[styles.response, {fontSize:48, color:'green', marginBottom:15, textAlign:'center'}]}>Driving Licence Checker</Text>
       <Image
        source={{uri:'https://images.pexels.com/photos/13861/IMG_3496bfree.jpg',}} style={styles.image} />
-      <Text style={styles.response}>{feedback}{/*This is my message to be displayed to the user */}</Text> 
-      
+      <Text style={[styles.response, {color:'green', textAlign:'center'}]}>{feedback}{/*This is my message to be displayed to the user */}</Text> 
+      <Text style={styles.response}>Age: {age}</Text>
+      <Text style={styles.response}>Years: {licenceYears}</Text>
     </View>
     </SafeAreaView>
   );
@@ -31,7 +33,13 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#e9f09cff',
+    backgroundColor: '#96cbd1ff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  content: {
+    width: '100%',
+    height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -39,13 +47,15 @@ const styles = StyleSheet.create({
   response: {
     fontSize: 28,
     color: 'blue',
+    fontWeight: 'bold',
+    marginTop: 5,
   },
+
   image:{
-    width: 450,
-    height: 350,
-    resizeMode: 'contain',
+    width: '100%',
+    height: '50%',
+    resizeMode: 'cover',
     top:0,
-    position:'absolute',
   },
 
 });
