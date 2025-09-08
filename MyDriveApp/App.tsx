@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, Image, SafeAreaView, ScrollView, TextInput, Button } from 'react-native';
 
 export default function App() {
   //defining variables below
   const age = 20;
-  const licenceYears = 5;
+  const licenceYears = 2; 
   let feedback = '';
   //adding if statement below
   if (age >= 18) {
@@ -38,16 +38,31 @@ export default function App() {
   
   return (
     <SafeAreaView style={styles.container}>
+    <ScrollView>  
     <View style={styles.content}>
+      
       <Text style={[styles.response, {fontSize:48, color:'green', marginBottom:15, textAlign:'center'}]}>Driving Licence Checker</Text>
       <Image
        source={{uri:'https://images.pexels.com/photos/13861/IMG_3496bfree.jpg',}} style={styles.image} />
+       <TextInput style={styles.inputBox} placeholder='Enter your age here'
+        keyboardType='numeric'/>
+        <View style={{marginTop:15, width: '60%', backgroundColor: 'Green',}}>
+        <Button title = 'Check'/>
+        </View>
       <Text style={[styles.response, {color:'green', textAlign:'center'}]}>{feedback}{/*This is my message to be displayed to the user */}</Text> 
       <Text style={styles.response}>Age: {age}</Text>
       <Text style={styles.response}>Years: {licenceYears}</Text>
       <Text style={[styles.response, {color:'green', textAlign:'center'}]}>{drivingrank}</Text> 
+    
+      
+
+      
+      
     </View>
+    </ScrollView>
     </SafeAreaView>
+    
+    
   );
 }
 
@@ -77,6 +92,17 @@ const styles = StyleSheet.create({
     height: '50%',
     resizeMode: 'cover',
     top:0,
+  },
+  inputBox: {
+    width: "80%",
+    height: 50,
+    borderColor: 'gray',
+    borderWidth: 1,
+    marginTop: 20,
+    paddingHorizontal: 10,
+    fontSize: 18,
+    backgroundColor: 'white',
+    borderRadius: 8,
   },
 
 });
