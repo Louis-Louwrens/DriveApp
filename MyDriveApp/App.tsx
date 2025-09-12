@@ -37,9 +37,11 @@ export default function App() {
     }
   
   return (
-    <SafeAreaView style={styles.container}>
-    <ScrollView>  
-    <View style={styles.content}>
+    <View style={styles.container}>
+
+    <SafeAreaView style={styles.content}>
+     
+    
       
       <Text style={[styles.response, {fontSize:48, color:'green', marginBottom:15, textAlign:'center'}]}>Driving Licence Checker</Text>
       <Image
@@ -56,12 +58,10 @@ export default function App() {
     
       
 
-      
-      
-    </View>
-    </ScrollView>
+    
     </SafeAreaView>
     
+    </View>
     
   );
 }
@@ -74,8 +74,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   content: {
-    width: '100%',
-    height: '100%',
+    width: '80%',
+    height: '60%',
     alignItems: 'center',
     justifyContent: 'center',
   },
